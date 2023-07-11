@@ -1,2 +1,5 @@
 #!/bin/bash
-echo $PATH | tr ":" "\n" | wc -1
+IFS=':' read -ra directories <<< "$PATH"
+count=${#directories[@]}
+echo "$count"
+
